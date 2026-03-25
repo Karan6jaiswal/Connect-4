@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 200 100% 90%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 200 100% 90%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 200 100% 90%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 280 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 12%;
+    --muted-foreground: 200 30% 50%;
+
+    --accent: 160 100% 45%;
+    --accent-foreground: 220 20% 4%;
+
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 60% 20%;
+    --input: 200 60% 20%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-cyan: 190 100% 50%;
+    --neon-magenta: 310 100% 60%;
+    --neon-green: 160 100% 45%;
+    --neon-yellow: 50 100% 55%;
+
+    --glow-cyan: 0 0 20px hsl(190 100% 50% / 0.5), 0 0 40px hsl(190 100% 50% / 0.2);
+    --glow-magenta: 0 0 20px hsl(310 100% 60% / 0.5), 0 0 40px hsl(310 100% 60% / 0.2);
+    --glow-green: 0 0 20px hsl(160 100% 45% / 0.5), 0 0 40px hsl(160 100% 45% / 0.2);
+
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 200 100% 90%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 200 100% 90%;
+    --sidebar-border: 200 60% 20%;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(190 100% 50% / 0.8), 0 0 30px hsl(190 100% 50% / 0.4);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 10px hsl(310 100% 60% / 0.8), 0 0 30px hsl(310 100% 60% / 0.4);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 10px hsl(160 100% 45% / 0.8), 0 0 30px hsl(160 100% 45% / 0.4);
+  }
+  .box-glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  .box-glow-magenta {
+    box-shadow: var(--glow-magenta);
+  }
+  .box-glow-green {
+    box-shadow: var(--glow-green);
+  }
+
+  /* Scanline overlay */
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(190 100% 50% / 0.015) 2px,
+      hsl(190 100% 50% / 0.015) 4px
+    );
+    animation: scanline-scroll 10s linear infinite;
+  }
+
+  @keyframes scanline-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 0 100px; }
+  }
+}
