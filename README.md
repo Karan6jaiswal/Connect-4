@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Connect-4
-=======
 # Connect-4: Cyberpunk Edition
 
 A beautifully crafted, offline-capable Connect-4 game featuring a neon cyberpunk aesthetic and a challenging Minimax-based AI opponent. 
